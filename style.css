@@ -15,10 +15,11 @@
     margin: auto;
 }
 
+/*Navbar*/
+
 .navbar {
     position: fixed;
     width: 100%;
-    background-color: rgb(0, 132, 255);
     padding: 15px 0;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -47,6 +48,37 @@
     margin-left: 25px;
 }
 
+.navbar .menu li a:hover {
+    color: #ecaa7f;
+    transition: color 0.3s ease;
+}
 
+/*Home*/
 
+.home {
+    display: flex;
+    background: url(image/banner.png) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+}
 
+.home .max-width {
+    margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1 {
+    font-size: 27px;
+}
+
+.home .home-content .text-2 {
+    font-size: 75px;
+    font-weight: 500;
+    margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+    font-size: 40px;
+    margin: 5px 0;
+}
