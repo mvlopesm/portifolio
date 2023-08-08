@@ -361,9 +361,12 @@ section {
 }
 
 /* Stacks */
-
 .skills .skills-content .column {
+  height: 100vh;
   width: calc(50% - 30px);
+}
+.skills .title {
+  margin-top: 100px;
 }
 .skills .skills-content .left .text {
   font-size: 25px;
@@ -400,6 +403,11 @@ section {
 .skills .skills-content .right span {
   font-weight: 500;
   font-size: 18px;
+}
+.skills .skills-content .right img {
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
 }
 .skills .skills-content .right .line {
   width: 100%;
