@@ -13,6 +13,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #000000;
+}
+
 .max-width {
   max-width: 1300px;
   padding: 0 80px;
@@ -103,8 +107,9 @@ html {
 }
 
 section {
-  padding: 100px 0;
+  padding-top: 100px;
 }
+
 section .title {
   font-family: "Ubuntu", sans-serif;
   text-align: center;
@@ -129,7 +134,7 @@ section .title::after {
   bottom: -12px;
   left: 50%;
   font-size: 20px;
-  background: #fff;
+  background: #000000;
   color: #39b9b2;
   padding: 5px;
   transform: translateX(-50%);
@@ -137,7 +142,7 @@ section .title::after {
 .about,
 .services,
 .skills,
-.teams,
+.projects,
 .contact,
 footer {
   font-family: "Roboto", sans-serif;
@@ -211,15 +216,11 @@ footer {
 }
 
 /*About*/
-
-section {
-  padding: 100px 0;
-}
-
 .about {
   font-family: "Roboto", sans-serif;
-  color: #111;
+  color: #fff;
   font-size: 20px;
+  background: #000000;
 }
 
 .about .about-content {
@@ -312,29 +313,26 @@ section {
 
 /*  sessão serviços */
 .services,
-.teams {
-  background: #111;
+.projects {
+  background: #000000;
   color: #fff;
   height: 100vh;
 }
-.services .title::before,
-.teams .title::before {
+.services .title::before {
   background: #fff;
 }
-.services .title::after,
-.teams .title::after {
-  background: #111;
+.services .title::after {
   content: "Que oferecemos";
 }
 .services .serv-content .card {
   min-height: 350px;
   width: calc(33% - 20px);
-  background: #222;
   text-align: center;
   border-radius: 6px;
   padding: 20px 25px;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: #222;
 }
 .services .serv-content .card:hover {
   background: #39b9b2;
@@ -359,8 +357,13 @@ section {
 }
 
 /* Stacks */
+.skills {
+  background: #000000;
+  color: #fff;
+}
 .skills .skills-content .column {
   width: calc(50% - 30px);
+  height: 60vh;
 }
 .skills .title {
   margin-top: 100px;
@@ -420,12 +423,74 @@ section {
   background: #39b9b2;
 }
 
+/*  sessão equipe  */
+.projects .title {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+.projects .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.projects .carousel .card:hover {
+  background: #39b9b2;
+}
+.projects .carousel .card img {
+  height: 200px;
+  padding: 5px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border-color: #fff;
+}
+
+.projects .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+.projects .carousel .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot {
+  width: 14px;
+  height: 14px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid #39b9b2 !important;
+  transition: all 0.3s ease;
+}
+.owl-dot.active {
+  width: 35px;
+  border-radius: 15px;
+}
+.owl-dot.active,
+.owl-dot:hover {
+  background: #39b9b2 !important;
+}
+
 /*  sessão Contato  */
+.contact {
+  background: #000000;
+  color: #fff;
+}
 .contact .title::after {
   content: "Fale conosco";
 }
 .contact .contact-content .column {
   width: calc(50% - 30px);
+  height: 40vh;
 }
 .contact .contact-content {
   align-items: center;
@@ -471,7 +536,7 @@ section {
   font-weight: 500;
 }
 .contact .contact-content .row .info .sub-title {
-  color: #333;
+  color: #fff;
 }
 .contact .contact-content .row ion-icon {
   font-size: 25px;
@@ -482,18 +547,47 @@ section {
   justify-content: space-around;
 }
 
-/*Responsividade*/
+/*  sessão footer  */
+footer {
+  background: #111;
+  padding: 20px 23px;
+  color: #fff;
+  text-align: center;
+}
+footer span a {
+  color: #39b9b2;
+  text-decoration: none;
+}
+footer span a:hover {
+  text-decoration: underline;
+}
 
-@media (max-width: 750px) {
-  .max-width {
+/*  responsivo  */
+@media (max-width: 1300px) {
+  .navbar .max-width {
+    margin-left: 0;
+  }
+}
+@media (max-width: 1104px) {
+  .about .about-content .left img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (max-width: 991px) {
+  .navbar .max-width {
     padding: 0 50px;
   }
-
+}
+@media (max-width: 947px) {
+  .max-width {
+    max-width: 800px;
+    padding: 0 50px;
+  }
   .menu-btn {
     display: block;
     z-index: 999;
   }
-
   .navbar .menu {
     position: fixed;
     width: 100%;
@@ -505,65 +599,70 @@ section {
     text-align: center;
     transition: all 0.3s ease;
   }
-
   .navbar .menu.active {
     left: 0;
   }
-
   .navbar .menu li {
     display: block;
   }
-
   .navbar .menu li a {
     display: inline-block;
     margin: 20px 0;
     font-size: 25px;
   }
-
   .home .home-content .text-2 {
-    font-size: 68px;
+    font-size: 70px;
   }
-
   .home .home-content .text-3 {
     font-size: 35px;
   }
-
   .home .home-content a {
     font-size: 23px;
     padding: 10px 30px;
   }
+  .about .about-content .column {
+    width: 50%;
+  }
+  .about .about-content .left {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+  }
+  .about .about-content .right {
+    flex: 100%;
+  }
+  .services .serv-content .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+  .skills .skills-content .column,
+  .contact .contact-content .column {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  footer {
+    margin-top: 15px;
+  }
 }
-
-@media (max-width: 630px) {
+@media (max-width: 690px) {
   .home .home-content .text-2 {
-    font-size: 55px;
+    font-size: 60px;
   }
-
   .home .home-content .text-3 {
-    font-size: 30px;
+    font-size: 32px;
   }
-}
-
-@media (max-width: 525px) {
-  .home .home-content .text-2 {
-    font-size: 48px;
-  }
-
-  .home .home-content .text-3 {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 485px) {
-  .home .home-content .text-2 {
-    font-size: 42px;
-  }
-
-  .home .home-content .text-3 {
-    font-size: 24px;
-  }
-
   .home .home-content a {
     font-size: 20px;
+  }
+  .services .serv-content .card {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .home .home-content .text-2 {
+    font-size: 50px;
+  }
+  .home .home-content .text-3 {
+    font-size: 27px;
   }
 }
