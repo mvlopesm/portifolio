@@ -11,6 +11,7 @@ $(document).ready(function () {
       $(".scroll-up-btn").removeClass("show");
     }
   });
+
   $(".scroll-up-btn").click(function () {
     $("html").animate({ scrollTop: 0 });
   });
@@ -30,8 +31,14 @@ $(document).ready(function () {
 
   $(".menu-btn").click(function () {
     $(".navbar .menu").toggleClass("active");
-    $(".menu-btn i").toggleClass("active");
+    $(".menu-btn").toggleClass("active");
   });
+
+  $(".navbar .menu li a").click(function () {
+    $(".navbar .menu").removeClass("active");
+    $(".menu-btn ion-icon").removeClass("active");
+  });
+
   $(".carousel").owlCarousel({
     margin: 20,
     loop: true,
